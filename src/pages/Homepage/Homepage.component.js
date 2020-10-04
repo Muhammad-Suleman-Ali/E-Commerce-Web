@@ -6,8 +6,7 @@ import './Homepage.Styles.scss';
 const Homepage =()=>( 
   <div className='homepage'>
     <Directory/>
+   
     </div>
 )
-
-
 export default Homepage ;
