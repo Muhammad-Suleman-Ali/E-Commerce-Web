@@ -46,7 +46,7 @@ render(){
 
 
                       <div>
-                   <Header currentuser={this.state.currentUser}/>
+                   <Header />
                        <Switch>
                      <Route exact path='/' component={Homepage}/>   
                      <Route exact path='/shop' component={Shoppage}/> 
