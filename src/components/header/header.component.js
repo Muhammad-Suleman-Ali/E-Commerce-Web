@@ -4,10 +4,12 @@ import   {ReactComponent as Logo} from '../assets/crown.svg';
 import { Link } from 'react-router-dom';
 import {auth } from '../../firebase/firebase.utils';
 import { connect } from "react-redux";
+//import { createLogger } from 'redux-logger';
 
 
 
-const Header =({currentuser})=>(
+const Header =({currentUser})=>(
+
     <div className='header'>
         <Link className='logo-container' to ='/' >
         <Logo className='logo'/>
@@ -16,19 +18,23 @@ const Header =({currentuser})=>(
 
        <div className='options'>
              <Link className='option' to='/shop'>Shop</Link>
-                
+             <Link className='option' to='/contact'>Contact</Link>
+             
+            
                  {
-                     currentuser?
-                     <div className='option' onClick={()=> auth.signOut()}>SIGN OUT</div>
+                     
+                    currentUser?
+                    
+                     <div className='option' onClick={()=>auth.signOut()}>SIGN OUT</div>
                      :
                      <Link className='option' to='/signin'>SIGN IN</Link>
                  }
-       </div>
-
+        </div>
     </div>
 )
+
 const mapStateToProps =state=>({
-    currentusers: state.user.currentUser
+    currentUser: state.user.currentUser
 })
 
 export default connect(mapStateToProps)(Header);

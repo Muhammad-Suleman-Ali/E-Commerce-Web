@@ -13,8 +13,7 @@ class SignIn extends Component{
             email:'',
             password:''
         };
-    } 
-
+    }
     handleSubmit= async e=>{
      e.preventDefault();
      const {email,password}=this.state;
@@ -23,7 +22,7 @@ class SignIn extends Component{
          this.setState({email:'', password:'' });
          
      }catch (error){
-         console.log(error);
+        console.log(error);
      }
     };
 

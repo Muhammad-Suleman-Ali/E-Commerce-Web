@@ -20,7 +20,7 @@ this.state={
 
 handleSubmit=async e =>{
     e.preventDefault();
-    const{displayName,email,password,confirmPassword}=this.state;
+    const {displayName,email,password,confirmPassword}=this.state;
     if(password !== confirmPassword ){
         alert("password don't match ");
         return;
@@ -28,8 +28,9 @@ handleSubmit=async e =>{
     try{
        const {user} = await auth.createUserWithEmailAndPassword(
         email,
-        password
+        password,
         );
+       
        await createUserProfileDocument(user,{displayName});
        this.setState({
             displayName:'',
