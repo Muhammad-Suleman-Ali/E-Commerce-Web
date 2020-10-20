@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import directoryReducer from "../../../redux/directory/directory.reducer";
+import directoryReducer from "./directory.reducer";
 
 
 const selectDiretory = state => state.directory;
